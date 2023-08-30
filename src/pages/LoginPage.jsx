@@ -14,7 +14,7 @@ function LoginPage() {
   return (
     <section className="login-page">
       <article className="login-page__main">
-        <h2>Login to Post a thread.</h2>
+        <h2>Login to Post New thread.</h2>
 
         <LoginInput login={onLogin} />
         <p>
