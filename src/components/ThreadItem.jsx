@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { FaReply } from 'react-icons/fa';
+import { FiThumbsUp, FiThumbsDown } from 'react-icons/fi';
 import postedAt from '../utils';
 
 function ThreadItem({
@@ -14,6 +15,8 @@ function ThreadItem({
   totalComments,
   id,
   user,
+  upVotesBy,
+  downVotesBy,
 }) {
   const navigate = useNavigate();
 
@@ -41,6 +44,10 @@ function ThreadItem({
         <p>{body}</p>
       </article>
       <div className="thread-item__detail">
+        <FiThumbsUp />
+        <span>{upVotesBy.length}</span>
+        <FiThumbsDown />
+        <span>{downVotesBy.length}</span>
         <p>
           <FaReply />
           {totalComments}
@@ -70,4 +77,7 @@ ThreadItem.propTypes = {
   totalComments: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
   user: PropTypes.objectOf(PropTypes.string).isRequired,
+  upVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
+  downVotesBy: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string))
+    .isRequired,
 };

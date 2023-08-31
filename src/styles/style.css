@@ -173,9 +173,10 @@ main {
 }
 
 .thread-item__detail {
-  width: 400px;
+  width: 500px;
   display: flex;
   justify-content: space-around;
+  gap: 5px;
 }
 
 .thread-item__detail-avatar {
